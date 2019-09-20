@@ -19,20 +19,55 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import android.os.Bundle;
 import com.android.settings.R;
-
+import android.content.Context;
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.provider.Settings;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
 import com.android.settings.SettingsPreferenceFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class RecentsSettings extends SettingsPreferenceFragment {
+
+    private static final String RECENTS_COMPONENT_TYPE = "recents_component";
+
+    private ListPreference mRecentsComponentType;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.derpquest_settings_recents);
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        // recents component type
+        mRecentsComponentType = (ListPreference) findPreference(RECENTS_COMPONENT_TYPE);
+        mRecentsComponentType.setSummary(mRecentsComponentType.getEntry());
+   }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        if (preference == mRecentsComponentType) {
+            int type = Integer.valueOf((String) newValue);
+            int index = mRecentsComponentType.findIndexOfValue((String) newValue);
+            mRecentsComponentType.setSummary(mRecentsComponentType.getEntries()[index]);
+            if (type == 1) { // Disable swipe up gesture, if oreo type selected
+            }
+        return true;
+        }
+      return false;
     }
 
-    @Override
-    public int getMetricsCategory() {
+    @Override public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.OWLSNEST;
     }
 }

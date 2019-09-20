@@ -482,6 +482,7 @@
     <string name="disable_transition_animations_title">Disable transition animations</string>
     <string name="disable_transition_animations_summary">Force disable all transition animations</string>
 
+<<<<<<< HEAD
     <!-- Smart Pixels -->
     <string name="smart_pixels_title">Smart Pixels</string>
     <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
@@ -499,5 +500,11 @@
     <string name="status_bar_logo_disabled">Disabled</string>
     <string name="status_bar_logo_style_title">DerpQuest logo style</string>
     <string name="status_bar_logo_color_title">Select color</string>
+
+    <!-- AOSP Recents component Style -->
+    <string name="aosp_recents_category">AOSP recents</string>
+    <string name="recents_component_type_title">Recents Style</string> 
+    <string name="recents_q">Q</string>
+    <string name="recents_oreo">Oreo</string>
 
 </resources>
