@@ -30,11 +30,24 @@ import com.android.settings.R;
 import com.derpquest.settings.preferences.AppMultiSelectListPreference;
 import com.derpquest.settings.preferences.ScrollAppsViewPreference;
 
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.UserHandle;
+import android.provider.Settings;
+
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+import androidx.preference.SwitchPreference;
+
+import java.util.Arrays;
+import java.util.HashSet;
 
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -49,12 +62,18 @@ public class MiscSettings extends SettingsPreferenceFragment implements
     private AppMultiSelectListPreference mAspectRatioAppsSelect;
     private ScrollAppsViewPreference mAspectRatioApps;
 
-
     @Override
     public void onCreate(Bundle icicle) {
       super.onCreate(icicle);
 
       addPreferencesFromResource(R.xml.derpquest_settings_misc);
+
+        boolean enableSmartPixels = getContext().getResources().
+                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+        Preference SmartPixels = findPreference("smart_pixels");
+        if (!enableSmartPixels){
+            getPreferenceScreen().removePreference(SmartPixels);
+        }
 
       final PreferenceCategory aspectRatioCategory =
           (PreferenceCategory) getPreferenceScreen().findPreference(KEY_ASPECT_RATIO_CATEGORY);
@@ -101,8 +120,7 @@ public class MiscSettings extends SettingsPreferenceFragment implements
       return false;
     }
 
-    @Override
-    public int getMetricsCategory() {
-      return MetricsProto.MetricsEvent.OWLSNEST;
+    @Override public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.OWLSNEST;
     }
 }
