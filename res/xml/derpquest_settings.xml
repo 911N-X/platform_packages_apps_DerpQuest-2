@@ -73,13 +73,20 @@
             android:fragment="com.derpquest.settings.fragments.RecentsSettings"
             android:icon="@drawable/ic_settings_recents"/>
         -->
-
+ 
         <!-- Notifications -->
         <Preference
             android:key="notifications_category"
             android:title="@string/notifications_title"
             android:fragment="com.derpquest.settings.fragments.NotificationsSettings"
             android:icon="@drawable/ic_settings_notifications"/>
+
+        <!-- Animation -->
+        <Preference 
+            android:key="animations_category" 
+            android:title="@string/animations_title" 
+            android:fragment="com.derpquest.settings.fragments.Animations" 
+            android:icon="@drawable/ic_settings_animations"/>
 
         <!-- Misc -->
         <Preference
