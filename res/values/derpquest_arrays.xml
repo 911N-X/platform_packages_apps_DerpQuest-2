@@ -406,7 +406,6 @@
         <item>5</item>
     </string-array>
 
-<<<<<<< HEAD
     <!-- Derpfest Logo -->
     <string-array name="status_bar_logo_entries" translatable="false">
         <item>@string/status_bar_logo_disabled</item>
@@ -436,9 +435,10 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+    </string-array>
 
-   <!-- Q and Oreo recents -->
-   <string-array name="recents_component_type_title_entries">
+    <!-- Q and Oreo recents -->
+    <string-array name="recents_component_type_title_entries">
         <item>@string/recents_q</item> 
         <item>@string/recents_oreo</item>
     </string-array>
@@ -447,16 +447,5 @@
         <item>0</item>
         <item>1</item>
     </string-array>
-
-   <!-- Q and Oreo recents -->
-   <string-array name="recents_component_type_title_entries">
-        <item>@string/recents_q</item> 
-        <item>@string/recents_oreo</item>
-    </string-array>
-
-    <string-array name="recents_component_type_title_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-    </string-arrays>
 
 </resources>

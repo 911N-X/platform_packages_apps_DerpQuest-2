@@ -482,7 +482,6 @@
     <string name="disable_transition_animations_title">Disable transition animations</string>
     <string name="disable_transition_animations_summary">Force disable all transition animations</string>
 
-<<<<<<< HEAD
     <!-- Smart Pixels -->
     <string name="smart_pixels_title">Smart Pixels</string>
     <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
@@ -506,5 +505,16 @@
     <string name="recents_component_type_title">Recents Style</string> 
     <string name="recents_q">Q</string>
     <string name="recents_oreo">Oreo</string>
+
+    <!-- Rounded corners -->
+    <string name="corners_category_title">Rounded corners</string>
+    <string name="corners_category_summary">Adjust rounded corners and padding</string>
+    <string name="corners_title">Allow customized rounded corners</string>
+    <string name="corner_radius">Rounded corner radius</string>
+    <string name="content_padding">Corner content padding</string>
+    <string name="status_bar_padding">Statusbar extra padding</string>
+    <string name="corner_fwvals">Use framework values</string>
+    <string name="corner_fwvals_summary">Useful if the device actually has rounded corners</string>
+    <string name="unit_pixels">dp</string>
 
 </resources>
